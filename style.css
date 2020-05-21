@@ -22,7 +22,7 @@ header h2 {
   color: black;
 }
 .search-form {
-  padding: 2rem;
+  padding: 2rem 2rem 0;
   display: flex;
 }
 .search-form input {
@@ -79,4 +79,15 @@ header h2 {
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
+}
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-error {
+  display: none;
+}
+.form-error.active {
+  display: block;
 }

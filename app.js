@@ -4,7 +4,8 @@ const authKey = config.AUTH,
   gallery = document.querySelector(".gallery"),
   searchInput = document.querySelector(".search-input"),
   form = document.querySelector(".search-form"),
-  more = document.querySelector(".more");
+  more = document.querySelector(".more"),
+  formError = document.querySelector(".form-error");
 let searchValue,
   page = 1,
   fetchLink,
@@ -39,8 +40,10 @@ async function fetchApi(url) {
 
 function generatePictures(data) {
   if (data.total_results === 0) {
-    console.log("No results");
+    console.error("No results");
+    formError.classList.add("active");
   } else {
+    formError.classList.remove("active");
     clear();
     data.photos.forEach((photo) => {
       const galleryImg = document.createElement("div");
